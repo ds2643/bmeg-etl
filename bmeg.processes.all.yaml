@@ -1,5 +1,7 @@
-##################
-### ENSEMBL
+- key: gdc-extract
+  command: gdc-extract
+  outputs:
+    OUT: source/gdc/cases.json
 
 - key: ensembl-extract
   command: curl-extract
@@ -16,19 +18,6 @@
     TRANSCRIPT: biostream/ensembl/ensembl.Transcript.json
     GENE: biostream/ensembl/ensembl.Gene.json
     EXON: biostream/ensembl/ensembl.Exon.json
-
-############
-### CCLE
-
-- key: ccle-drug-transform
-  command: ccle-transform
-  inputs:
-    DRUG_DATA: source/CCLE_NP24.2009_Drug_data_2015.02.24.csv
-  outputs:
-    RESPONSES: biostream/ccle/ccle.ResponseCurve.json
-
-#############
-### CTRP 
 
 - key: ctrp-extract
   command: curl-extract
